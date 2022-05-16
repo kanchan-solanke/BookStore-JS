@@ -1,0 +1,97 @@
+console.log("------Welcome to the Book Store-----------")
+
+
+const books = [{
+    "id": 1,
+    "bookName": "A Better India: A Better World",
+    "bookAuthor": "Narayana Murthy",
+    "description": "At a time when India is battling huge problems of its own and is struggling to break free from the shackles of poor governance, "
+
+},
+{
+    "id": 2,
+    "bookName": "An Introduction to Dreamland	",
+    "bookAuthor": "Bhagat Singh",
+    "description": "am Saran Das was convicted for life in 1915 in the first Lahore Conspiracy Case. While in Salem Central Prison "
+
+},
+{
+    "id": 3,
+    "bookName": "Convenient Action	",
+    "bookAuthor": "Narendra Modi",
+    "description": "The book gives a snapshot of all the latest developments in India relating to climate change, including a brief on India's Intended Nationally Determined ..."
+},
+{
+"id" : 4,
+"bookName" : "Believe-What Life and Cricket Taught Me",
+"bookAuthor" : "Suresh Raina",
+"description": "It is a journey through the highs and lows in the cricketing career of a man who saw his world fall"
+}
+]
+
+//CRUD operation
+
+//find a book
+class Book {
+    constructor(bookName, bookAuthor) {
+        this.id = Math.random().toString(16).slice(2)
+        this.bookName = bookName
+        this.bookAuthor = bookAuthor
+    }
+
+
+}
+var obj = new Book([...books])
+
+// find
+
+function findBook(book) {
+
+    return book.id === 2
+}
+
+console.log(books.find(findBook))
+
+// add a book
+
+books.push([{
+    "id": 5,
+    "bookName": "Harry Potter",
+    "bookAuthor": "J.K.Rowling"
+},
+{
+     "id": 6,
+    "bookName": "Harry",
+    "bookAuthor": "J.K.Rowling"
+}
+])
+
+console.log(books)
+
+// delete
+
+books.pop("5")
+console.log(books)
+
+// edit
+
+objIndex = books.findIndex((obj => obj.id == 1));
+
+console.log("Before update: ", books[objIndex])
+
+//Update book's name property.
+books[objIndex].bookName = "Shiva"
+
+console.log("After update: ", books[objIndex])
+
+//delete
+
+console.log("----------Deleted User ----------------")
+
+const finalArr = books.filter((user) =>
+    user.bookName !== 'Shiva')
+
+console.log("Deleted data")
+console.log(finalArr)
+
+
